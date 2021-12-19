@@ -332,12 +332,15 @@ li {
     background-color:var(--text-secondary-color);
     color: #FFFFFF;
 }
+
 .icons .icon-hover {
     display: none;
 }
+
 .icons:hover .icon {
     display: none;
 }
+
 .icons:hover .icon-hover {
     display: block;
 }
@@ -369,9 +372,11 @@ li {
 .icon-client .icon-client-hover {
     display: none;
 }
+
 .icon-client:hover .icon-client-normal {
     display: none;
 }
+
 .icon-client:hover .icon-client-hover {
     display: block;
 }
@@ -384,7 +389,6 @@ li {
 
 .our-portfolio h2 {
     justify-content: center;
-
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -500,6 +504,7 @@ li {
 .footer .footer-link:hover {
     color: var(--text-secondary-color);
 }
+
 .footer .footer-address, .footer-tel {
     color: rgba(255, 255, 255, 0.6);
 }
@@ -561,15 +566,20 @@ li {
     background-color:var(--text-secondary-color);
     color: rgba(255, 255, 255, 0.1);
 }
+
 .footer-icons .footer-icon-hover {
     display: none;
 }
+
 .footer-icons:hover .footer-icon {
     display: none;
 }
+
 .footer-icons:hover .footer-icon-hover {
     display: block;
 }
+
+/* modal-window */
 .modal {
     cursor: not-allowed;
     display: flex;
@@ -581,9 +591,11 @@ li {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
-    pointer-events:
+    animation-name: show;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
 }
-
 .modal-window {
     cursor: auto;
     position: relative;
@@ -592,12 +604,30 @@ li {
     background: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    opacity:1;
+    pointer-events: visible;
+    transform: scale(1);
+    animation-name: showWindow;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
 }
 
 .is-hidden {
-    display: none;
     visibility: hidden;
-    opacity:
+    opacity: 0;
+    pointer-events: none;
+    animation-name: hide;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+}
+.is-hidden .modal-window {
+    transform: scale(0.1);
+    animation-name: hideWindow;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
 }
 
 .data-modal-close {
@@ -614,4 +644,42 @@ li {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     box-sizing: border-box;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+        visibility:visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+@keyframes hideWindow {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.1);
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility:visible;
+    }
+}
+@keyframes showWindow {
+    0% {
+        transform: scale(0.1);
+    }
+    100% { 
+        transform: scale(1);
+    }
 }
