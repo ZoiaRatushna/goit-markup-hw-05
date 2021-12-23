@@ -2,7 +2,8 @@
     --text-primery-color: #212121;
     --text-secondary-color: #2196F3;
     --primary-font: 'Raleway';
-    --main-font: 'Roboto';   
+    --main-font: 'Roboto';
+    --cubic-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -22,7 +23,7 @@ body {
 }
 
 .header 
-nav 
+nav,
 ul, 
 li {
     display: inline-block;
@@ -99,7 +100,7 @@ li {
     top: 43px;
     
     background-color: var(--text-secondary-color);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--cubic-transition);
 }
    
 .nav-link:hover {
@@ -494,18 +495,18 @@ li {
     height: 294px;
     background-color:rgba(33, 150, 243, 0.9);
     clip: rect(294px, 370px, 294px, 0px);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--cubic-transition);
     pointer-events: none;
 }
 
 .portfolio-list:hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--cubic-transition);
 }
 
 .portfolio-list:hover::before {
     clip: rect(0px, 370px, 294px, 0px);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--cubic-transition);
 }
 
 .portfolio-list .portfolio-masks {
@@ -517,7 +518,7 @@ li {
 
 .portfolio-list:hover .portfolio-overlay {
     transform: translateY(0);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--cubic-transition);
 }
 
 .portfolio-overlay {
@@ -531,7 +532,7 @@ li {
     align-content: center;
     justify-content: center;
     flex-direction: column;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--cubic-transition);
 }
 
 .portfolio-overlay p {
