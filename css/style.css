@@ -446,20 +446,20 @@ li {
 .our-portfolio button {
     padding-left: 22px;
     padding-right: 22px;
-    height: 50px;
+    height: 38px;
     background: #F5F4FA;
     cursor: pointer;
 
     font-weight: 500;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.62;
     font-family: var(--main-font);
     border: none;
     border-radius: 4px;
+    letter-spacing: 0.03em;
 }
 
 .our-portfolio button:hover {
-    height: 50px;
     background-color: var(--text-secondary-color);
 
     color:#FFFFFF ;
